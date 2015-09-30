@@ -23,7 +23,6 @@ DROP TRIGGER photo_tag_relation;
 DROP TRIGGER user_message_relation;
 DROP TRIGGER user_education_relation;
 DROP TRIGGER user_event_relation;
-DROP TRIGGER user_location_relation;
 DROP TRIGGER after_insert_location;
 
 DROP TABLE PhotoHasTag;

@@ -384,14 +384,7 @@ BEGIN
 END;
 /
 
-CREATE TRIGGER user_location_relation
-AFTER INSERT
-	ON FB_User
-	FOR EACH ROW
-BEGIN
-	
-END;
-/
+
 
 CREATE TRIGGER after_insert_location
 AFTER INSERT
