@@ -38,8 +38,8 @@ DROP TABLE UserHasFriend;
 DROP TABLE EventIsInLocation;
 
 DROP TABLE Tag;
-DROP TABLE Photo;
 DROP TABLE Album;
+DROP TABLE Photo;
 DROP TABLE Location;
 DROP TABLE Message;
 DROP TABLE Education;
