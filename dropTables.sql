@@ -36,6 +36,8 @@ DROP TABLE UserSendsReceivesMessage;
 DROP TABLE UserHasFriend;
 DROP TABLE EventIsInLocation;
 
+ALTER TABLE Album
+DROP CONSTRAINT album_foreign_key;
 DROP TABLE Tag;
 DROP TABLE Album;
 DROP TABLE Photo;
