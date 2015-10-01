@@ -1,6 +1,7 @@
 DROP SEQUENCE seq_education;
 DROP SEQUENCE seq_location;
 DROP SEQUENCE seq_message;
+DROP SEQUENCE seq_tag;
 
 DROP TRIGGER tag_increment;
 DROP TRIGGER education_increment;
