@@ -253,13 +253,3 @@ END;
 /
 
 
-
-CREATE TRIGGER after_insert_location
-AFTER INSERT
-	ON Location
-	FOR EACH ROW
-BEGIN
-END;
-/
-
-
