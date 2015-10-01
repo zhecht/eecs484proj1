@@ -19,6 +19,8 @@ DROP TABLE UserLivesInLocation;
 DROP TABLE UserSendsReceivesMessage;
 DROP TABLE UserHasFriend;
 DROP TABLE EventIsInLocation;
+DROP TABLE Hometown_Location;
+DROP TABLE Current_Location;
 
 DROP TABLE Tag;
 DROP TABLE Photo;
