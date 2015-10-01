@@ -14,15 +14,12 @@ DROP TRIGGER education_increment;
 DROP TRIGGER event_increment;
 DROP TRIGGER message_increment;
 DROP TRIGGER location_increment;
-DROP TRIGGER album_photo_relation;
 DROP TRIGGER photo_tag_relation;
 DROP TRIGGER user_message_relation;
-DROP TRIGGER user_education_relation;
 DROP TRIGGER user_event_relation;
 DROP TRIGGER after_insert_location;
 
 DROP TABLE PhotoHasTag;
-DROP TABLE UserHasEducation;
 DROP TABLE UserPlansEvent;
 DROP TABLE UserParticipatesInEvent;
 DROP TABLE UserLivesInLocation;
