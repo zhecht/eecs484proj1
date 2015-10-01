@@ -1,17 +1,9 @@
-DROP SEQUENCE seq_photo;
-DROP SEQUENCE seq_user;
-DROP SEQUENCE seq_tag;
 DROP SEQUENCE seq_education;
-DROP SEQUENCE seq_event;
 DROP SEQUENCE seq_location;
 DROP SEQUENCE seq_message;
 
-DROP TRIGGER photo_increment;
-DROP TRIGGER photo_modified;
 DROP TRIGGER tag_increment;
-DROP TRIGGER user_increment;
 DROP TRIGGER education_increment;
-DROP TRIGGER event_increment;
 DROP TRIGGER message_increment;
 DROP TRIGGER location_increment;
 DROP TRIGGER photo_tag_relation;
