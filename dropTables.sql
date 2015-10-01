@@ -24,8 +24,8 @@ DROP TABLE Current;
 
 DROP TABLE Tag;
 DROP TABLE Photo;
-DROP TABLE Location;
 DROP TABLE Message;
 DROP TABLE Education;
 DROP TABLE Event;
+DROP TABLE Location;
 DROP TABLE FB_User;
