@@ -8,19 +8,12 @@ DROP TRIGGER education_increment;
 DROP TRIGGER message_increment;
 DROP TRIGGER location_increment;
 DROP TRIGGER photo_tag_relation;
-DROP TRIGGER user_message_relation;
 DROP TRIGGER user_event_relation;
 DROP TRIGGER insert_location_trigger;
 
-DROP TABLE PhotoHasTag;
-DROP TABLE UserPlansEvent;
 DROP TABLE UserParticipatesInEvent;
-DROP TABLE UserLivesInLocation;
-DROP TABLE UserSendsReceivesMessage;
 DROP TABLE UserHasFriend;
-DROP TABLE EventIsInLocation;
-DROP TABLE Hometown_Location;
-DROP TABLE Current_Location;
+DROP TABLE UserLivesInLocation;
 
 DROP TABLE Tag;
 DROP TABLE Photo;
