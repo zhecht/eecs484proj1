@@ -221,13 +221,13 @@ BEGIN
             IF rows_found > 0 THEN
                 UPDATE UserLivesInLocation SET HOMETOWN_LOCATION_ID = :NEW.LOCATION_ID WHERE USER_ID = :NEW.USER_ID;
             ELSE
-                INSERT INTO UserLivesInLocation (USER_ID, HOMETOWN_LOCATION_ID) VALUES (:NEW.USER_ID, :NEW.LOCATION_ID);
+                INSERT INTO UserLivesInLocation (USER_ID, HOMETOWN_LOCATION_ID, CURRENT_LOCATION_ID) VALUES (:NEW.USER_ID, :NEW.LOCATION_ID, NULL);
             END IF;
         ELSE
             IF rows_found > 0 THEN
                 UPDATE UserLivesInLocation SET CURRENT_LOCATION_ID = :NEW.LOCATION_ID WHERE USER_ID = :NEW.USER_ID;
             ELSE
-                INSERT INTO UserLivesInLocation (USER_ID, CURRENT_LOCATION_ID) VALUES (:NEW.USER_ID, :NEW.LOCATION_ID);
+                INSERT INTO UserLivesInLocation (USER_ID, HOMETOWN_LOCATION_ID, CURRENT_LOCATION_ID) VALUES (:NEW.USER_ID, NULL, :NEW.LOCATION_ID);
             END IF;
         END IF;
     END IF;
