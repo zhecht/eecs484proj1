@@ -211,7 +211,7 @@ END;
 CREATE TRIGGER insert_location_trigger
 AFTER INSERT
     ON Location
-        FOR EACH ROW
+    FOR EACH ROW
 DECLARE
     rows_found NUMBER;
 BEGIN
