@@ -188,30 +188,3 @@ BEGIN
 END;
 /
 
-
---CREATE TRIGGER user_event_relation
---AFTER INSERT
---    ON Event
---    FOR EACH ROW
---BEGIN
-    
---END;
---/
-
-CREATE TRIGGER insert_location_trigger
-AFTER INSERT
-    ON Location
-    FOR EACH ROW
-DECLARE
-    rows_found NUMBER;
-BEGIN
-    IF :NEW.USER_ID IS NOT NULL THEN
-        
-        IF :NEW.IS_HOMETOWN IS NOT NULL THEN
-            INSERT INTO UserLivesInLocation (USER_ID, LOCATION_ID, TYPE) VALUES (:NEW.USER_ID, :NEW.LOCATION_ID, 'HOMETOWN');
-        ELSE
-            INSERT INTO UserLivesInLocation (USER_ID, LOCATION_ID, TYPE) VALUES (:NEW.USER_ID, :NEW.LOCATION_ID, 'CURRENT');
-        END IF;
-    END IF;
-END;
-/

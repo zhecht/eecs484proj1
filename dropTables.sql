@@ -7,8 +7,6 @@ DROP TRIGGER tag_increment;
 DROP TRIGGER education_increment;
 DROP TRIGGER message_increment;
 DROP TRIGGER location_increment;
---DROP TRIGGER user_event_relation;
-DROP TRIGGER insert_location_trigger;
 
 DROP TABLE UserParticipatesInEvent;
 DROP TABLE UserHasFriend;
