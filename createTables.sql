@@ -217,7 +217,7 @@ DECLARE
 BEGIN
     IF :NEW.USER_ID IS NOT NULL THEN
         SELECT COUNT(*) INTO rows_found FROM UserLivesInLocation WHERE ROWNUM <= 1 AND USER_ID = :NEW.USER_ID;
-        IF :NEW.IS_HOMETOWN IS NULL THEN
+        IF :NEW.IS_HOMETOWN IS NOT NULL THEN
             IF rows_found THEN
                 UPDATE UserLivesInLocation SET HOMETOWN_LOCATION_ID = :NEW.LOCATION_ID WHERE USER_ID = :NEW.USER_ID;
             ELSE
@@ -233,6 +233,5 @@ BEGIN
     ELSE
         --don't need table for event-->location 
     END IF;
-
 END;
 /
