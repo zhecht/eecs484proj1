@@ -155,76 +155,76 @@ CACHE 10;
 
 CREATE TRIGGER tag_increment
 BEFORE INSERT
-	ON Tag
-	FOR EACH ROW
+    ON Tag
+    FOR EACH ROW
 BEGIN
-	:NEW.TAG_ID := seq_tag.nextval;
+    :NEW.TAG_ID := seq_tag.nextval;
 END;
 /
 
 CREATE TRIGGER education_increment
 BEFORE INSERT
-	ON Education
-	FOR EACH ROW
+    ON Education
+    FOR EACH ROW
 BEGIN
-	:NEW.EDUCATION_ID := seq_education.nextval;
+    :NEW.EDUCATION_ID := seq_education.nextval;
 END;
 /
 
 CREATE TRIGGER message_increment
 BEFORE INSERT
-	ON Message
-	FOR EACH ROW
+    ON Message
+    FOR EACH ROW
 BEGIN
-	:NEW.MESSAGE_ID := seq_message.nextval;
+    :NEW.MESSAGE_ID := seq_message.nextval;
 END;
 /
 
 CREATE TRIGGER location_increment
 BEFORE INSERT
-	ON Location
-	FOR EACH ROW
+    ON Location
+    FOR EACH ROW
 BEGIN
-	:NEW.LOCATION_ID := seq_location.nextval;
+    :NEW.LOCATION_ID := seq_location.nextval;
 END;
 /
 
 CREATE TRIGGER photo_tag_relation
 AFTER INSERT
-	ON Tag
-	FOR EACH ROW
+    ON Tag
+    FOR EACH ROW
 BEGIN
-	INSERT INTO PhotoHasTag (PHOTO_ID, TAG_ID) VALUES (:NEW.PHOTO_ID, :NEW.TAG_ID);
+    INSERT INTO PhotoHasTag (PHOTO_ID, TAG_ID) VALUES (:NEW.PHOTO_ID, :NEW.TAG_ID);
 END;
 /
 
 
 CREATE TRIGGER user_event_relation
 AFTER INSERT
-	ON Event
-	FOR EACH ROW
+    ON Event
+    FOR EACH ROW
 BEGIN
-	INSERT INTO UserPlansEvent (EVENT_ID, USER_ID) VALUES (:NEW.EVENT_ID, :NEW.EVENT_CREATOR_ID);
+    INSERT INTO UserPlansEvent (EVENT_ID, USER_ID) VALUES (:NEW.EVENT_ID, :NEW.EVENT_CREATOR_ID);
 END;
 /
 
 CREATE TRIGGER insert_location_trigger
 AFTER INSERT
-	ON Location
+    ON Location
         FOR EACH ROW
 DECLARE
     rows_found NUMBER;
 BEGIN
- 	IF :NEW.USER_ID IS NOT NULL THEN
- 		SELECT COUNT(*) INTO rows_found FROM UserLivesInLocation WHERE ROWNUM <= 1 AND USER_ID = :NEW.USER_ID;
- 		IF :NEW.IS_HOMETOWN IS NULL THEN
- 			IF rows_found THEN
+    IF :NEW.USER_ID IS NOT NULL THEN
+        SELECT COUNT(*) INTO rows_found FROM UserLivesInLocation WHERE ROWNUM <= 1 AND USER_ID = :NEW.USER_ID;
+        IF :NEW.IS_HOMETOWN IS NULL THEN
+            IF rows_found THEN
                 UPDATE UserLivesInLocation SET HOMETOWN_LOCATION_ID = :NEW.LOCATION_ID WHERE USER_ID = :NEW.USER_ID;
             ELSE
                 INSERT INTO UserLivesInLocation (USER_ID, HOMETOWN_LOCATION_ID) VALUES (:NEW.USER_ID, :NEW.LOCATION_ID);
             END IF;
         ELSE
-        	IF rows_found THEN
+            IF rows_found THEN
                 UPDATE UserLivesInLocation SET CURRENT_LOCATION_ID = :NEW.LOCATION_ID WHERE USER_ID = :NEW.USER_ID;
             ELSE
                 INSERT INTO UserLivesInLocation (USER_ID, CURRENT_LOCATION_ID) VALUES (:NEW.USER_ID, :NEW.LOCATION_ID);
