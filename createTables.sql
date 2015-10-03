@@ -230,8 +230,6 @@ BEGIN
                 INSERT INTO UserLivesInLocation (USER_ID, CURRENT_LOCATION_ID) VALUES (:NEW.USER_ID, :NEW.LOCATION_ID);
             END IF;
         END IF;
-    ELSE
-        --don't need table for event-->location 
     END IF;
 END;
 /
