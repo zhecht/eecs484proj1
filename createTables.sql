@@ -199,14 +199,14 @@ END;
 /
 
 
-CREATE TRIGGER user_event_relation
-AFTER INSERT
-    ON Event
-    FOR EACH ROW
-BEGIN
-    INSERT INTO UserPlansEvent (EVENT_ID, USER_ID) VALUES (:NEW.EVENT_ID, :NEW.EVENT_CREATOR_ID);
-END;
-/
+--CREATE TRIGGER user_event_relation
+--AFTER INSERT
+--    ON Event
+--    FOR EACH ROW
+--BEGIN
+    
+--END;
+--/
 
 CREATE TRIGGER insert_location_trigger
 AFTER INSERT
