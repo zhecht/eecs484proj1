@@ -188,15 +188,6 @@ BEGIN
 END;
 /
 
-CREATE TRIGGER photo_tag_relation
-AFTER INSERT
-    ON Tag
-    FOR EACH ROW
-BEGIN
-    INSERT INTO PhotoHasTag (PHOTO_ID, TAG_ID) VALUES (:NEW.PHOTO_ID, :NEW.TAG_ID);
-END;
-/
-
 
 --CREATE TRIGGER user_event_relation
 --AFTER INSERT
