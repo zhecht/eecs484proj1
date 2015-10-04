@@ -8,10 +8,8 @@ DROP TRIGGER education_increment;
 DROP TRIGGER message_increment;
 DROP TRIGGER location_increment;
 
-DROP TABLE UserParticipatesInEvent;
 DROP TABLE UserHasFriend;
-DROP TABLE UserLivesInLocation;
-
+Drop Table UserParticipatesInEvent;
 DROP TABLE Tag CASCADE CONSTRAINTS;
 DROP TABLE Photo CASCADE CONSTRAINTS;
 DROP TABLE Message CASCADE CONSTRAINTS;
